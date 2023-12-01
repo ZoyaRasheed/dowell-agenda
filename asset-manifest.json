@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/dowell-agenda/static/css/main.b5495c4d.css",
+    "main.js": "/dowell-agenda/static/js/main.403f5891.js",
+    "static/js/787.3a3d7ac3.chunk.js": "/dowell-agenda/static/js/787.3a3d7ac3.chunk.js",
+    "index.html": "/dowell-agenda/index.html",
+    "main.b5495c4d.css.map": "/dowell-agenda/static/css/main.b5495c4d.css.map",
+    "main.403f5891.js.map": "/dowell-agenda/static/js/main.403f5891.js.map",
+    "787.3a3d7ac3.chunk.js.map": "/dowell-agenda/static/js/787.3a3d7ac3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b5495c4d.css",
+    "static/js/main.403f5891.js"
+  ]
+}
