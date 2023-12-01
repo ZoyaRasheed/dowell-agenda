@@ -34,7 +34,7 @@ const AgendaDisplay = ({ agendaDetails }) => {
       </Tab>
     );
   });
-
+  const excludedKeys = ['_id','company_id', 'active', 'status', 'project', 'subproject', 'records'];
   const displayAgenda = () => {
     // return (
     //         <>
@@ -49,9 +49,11 @@ const AgendaDisplay = ({ agendaDetails }) => {
     return (
       <>
         {Object.entries(selectedAgenda.agenda[0]).map(([key, value]) => (
-          <div key={key}>
-          {key}:{Array.isArray(value)? displayTimeline(value): value}
-          </div>
+          !excludedKeys.includes(key) && (
+            <div key={key}>
+              {key}:{Array.isArray(value) ? displayTimeline(value) : value}
+            </div>
+          )
         ))}
       </>
     );
