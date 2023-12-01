@@ -15,7 +15,7 @@ const AgendaDisplay = ({ agendaDetails }) => {
   const handleClick = (event, newValue) => {
     const clickedItem = subprojectList[newValue];
     setSelectedProject(clickedItem);
-    setSelectedAgenda(agendaDetails.data.agenda.find((agenda) => agenda.subproject_name === clickedItem));
+    setSelectedAgenda(agendaDetails.data.agenda.find((agenda) => agenda.subproject_name.split(" ").join("-") === clickedItem.split(" ").join("-")));
   };
   // useEffect(()=>{
   //   console.log(selectedProject)
