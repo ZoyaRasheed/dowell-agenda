@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Tabs from "@mui/joy/Tabs";
 import TabList from "@mui/joy/TabList";
 import Tab from "@mui/joy/Tab";
+import "./App.css"
 
 const AgendaDisplay = ({ agendaDetails }) => {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -34,7 +35,7 @@ const AgendaDisplay = ({ agendaDetails }) => {
       </Tab>
     );
   });
-  const excludedKeys = ['_id','company_id', 'active', 'status', 'project', 'subproject', 'records'];
+  const excludedKeys = ['_id', 'company_id', 'active', 'status', 'project', 'subproject', 'records', 'lead_approval', 'sub_project'];
   const displayAgenda = () => {
     // return (
     //         <>
@@ -51,7 +52,11 @@ const AgendaDisplay = ({ agendaDetails }) => {
         {Object.entries(selectedAgenda.agenda[0]).map(([key, value]) => (
           !excludedKeys.includes(key) && (
             <div key={key}>
-              {key}:{Array.isArray(value) ? displayTimeline(value) : value}
+              {key}:{Array.isArray(value) ? displayTimeline(value) : (
+                <span className={key === 'agenda_title' ? 'agenda-title' : key === 'week_start' || key === 'week_end' ? 'date-format' : key === 'agenda_description' ? 'agenda-description' : key === 'lead_name' ? 'lead-name' : ''}>
+                  {key === 'agenda_title' ? <strong>{value}</strong> : key === 'agenda_description' ? <p className="agenda-description">{value}</p> : key === 'lead_name' ? value.toUpperCase() : value}
+                </span>
+              )}
             </div>
           )
         ))}
@@ -65,7 +70,7 @@ const AgendaDisplay = ({ agendaDetails }) => {
           <div key={index}>
             {Object.entries(timelineItem).map(([key, value]) => (
               <div key={key}>
-               {key}:{value}
+                {key}:{value}
               </div>
             ))}
           </div>

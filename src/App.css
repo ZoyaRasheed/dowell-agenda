@@ -17,3 +17,21 @@ html {
 .container {
   text-align: center;
 }
+.agenda-title {
+  font-weight: bold;
+  color: blue;}
+
+.agenda-description {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.lead-name {
+  text-transform: uppercase;
+}
+
+.date-format {
+  /* You can adjust the date format styles here */
+  font-style: italic;
+  color: #666; /* Gray color, you can adjust this */
+}
